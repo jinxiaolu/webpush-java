@@ -15,7 +15,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 
-public class MyTest {
+public class SendTest {
 
 //./gradlew run --args='send-notification --endpoint="https://fcm.googleapis.com/fcm/send/dKgFcmb3UzQ:APA91bEXS0V8Lc8CQQ-gvie2Ji4jsBEeWjSafJ8i1clSczr7hYdLHh6dpSf3UTWjXZyK9epjOXMN3zs_ZoBjkm6EOHDPqHoGIeBP_kKcZcDf_S2I-2ZuQQlpdgQiav6a-wehErWmmlxq" --key="BPHniLhgMolkEDtu2j5bbPYOt9cB65vQSM2MYK0SgDHjNBvIrAOlPcj2lxKxul_lEYQFekPs-Dq8zVAe8nG2VF4" --auth="BGMPkIihr-w3JniGvEokaA" --publicKey="BMszYyueEqvNm8ZWFM9jjwP7lsZoOFPCSvjWrJz6mfoeI_fvcqmzRzodju-rkR7nCbwnszfkE552lQrCGrQoEJc" --privateKey="BGMPkIihr-w3JniGvEokaA" --payload="Hello world"'
 
