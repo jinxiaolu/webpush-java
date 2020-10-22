@@ -4,6 +4,7 @@ package nl.martijndwars.webpush;
 import org.apache.http.HttpResponse;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.jose4j.lang.JoseException;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -57,8 +58,17 @@ public class SendTest {
         String auth = "MZix4Iw14P5gQK1sBNvhAQ";
         Subscription subscription = new Subscription(endpoint, new Subscription.Keys(p256dh, auth));
         String payload = "{\"title\":\"title1\",\"body\":\"body1\",\"icon\":\"/html/app-manifest/logo_512.png\",\"data\":{\"url\":\"https://www.baidu.com\"}}";
-        Notification notification = new Notification(subscription, payload);
-        HttpResponse response = pushService.send(notification);
-        System.out.println(response);
+//        Notification notification = new Notification(subscription, payload);
+//        HttpResponse response = pushService.send(notification);
+//        System.out.println(response);
+
+//        JSONObject result = WebPush.sendWebPush(
+//                p256dh,
+//                auth,
+//                endpoint,
+//                payload,
+//                contentEncoding,
+//                info,
+//                vapidVersion);
     }
 }
