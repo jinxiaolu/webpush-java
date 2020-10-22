@@ -8,10 +8,7 @@ import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.security.GeneralSecurityException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.Security;
+import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.time.Duration;
 import java.util.concurrent.ExecutionException;
@@ -53,22 +50,13 @@ public class SendTest {
                 .setPublicKey(publicKey)
                 .setPrivateKey(privateKey)
                 .setSubject("mailto:admin@domain.com");
-        String endpoint = "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfkEksWL-s0ZfUN4NkFNoq70fI9Tavi9zd064X2VD8H348MCltNRArkTMGTG2XNLst9FqJloWE0BWz-LQcb81MNUO0r1CIyI3O2LUSXFpIOVu494oerlh2aKVQ4SGtkva2LZjkIPHhy2AuDcUJPUQxULvYGRJ8eSiVcfwjJ--mn-QCLSc";
-        String p256dh = "BHFgeRVxre_3oLkPNEWcbHJL-dnOf4mLo76sglkkolco8zpiBRdn14qZaw-TDB4Ic2kIagoBOGFoYK9ezc9rTu4";
-        String auth = "MZix4Iw14P5gQK1sBNvhAQ";
+        String endpoint = "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfkWz_34ucBXuePlIrBZgLDI4UGxwBqXE1UFHVIVw0Tsdvhn1ueGA9WBu-oNxwpvKZB88108EE0TYGdwE8DCBQCu2rTqX6IGYDUtn3dSoo7xUGFZd9nn96aD04eRqtsg-SOqEvE7BVwkPWYHIp09dOywHPJE2iiy7KnuJ3zAN8ADWuOnI";
+        String p256dh = "BFAK35jiJaTno4jbz6VvZk4bC92vOvS-FoDMLFFUrEJpaxny_GCYpO7xQi6W8871SmzmKgUkdgz-1OpdjXelZ-8";
+        String auth = "S_QTqs873PJ622QNQXHQmA";
         Subscription subscription = new Subscription(endpoint, new Subscription.Keys(p256dh, auth));
-        String payload = "{\"title\":\"title1\",\"body\":\"body1\",\"icon\":\"/html/app-manifest/logo_512.png\",\"data\":{\"url\":\"https://www.baidu.com\"}}";
-//        Notification notification = new Notification(subscription, payload);
-//        HttpResponse response = pushService.send(notification);
-//        System.out.println(response);
-
-//        JSONObject result = WebPush.sendWebPush(
-//                p256dh,
-//                auth,
-//                endpoint,
-//                payload,
-//                contentEncoding,
-//                info,
-//                vapidVersion);
+        String payload = "{\"title\":\"title1\",\"body\":\"body2\",\"icon\":\"/html/app-manifest/logo_512.png\",\"data\":{\"url\":\"https://www.baidu.com\"}}";
+        Notification notification = new Notification(subscription, payload);
+        HttpResponse response = pushService.send(notification);
+        System.out.println(response);
     }
 }
