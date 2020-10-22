@@ -52,9 +52,9 @@ public class SendTest {
                 .setPublicKey(publicKey)
                 .setPrivateKey(privateKey)
                 .setSubject("mailto:admin@domain.com");
-        String endpoint = "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfj…iLyI_ulNgwwM-4IO6RQpPES3TFCePzyP1pNj6YT_y4apwx1Vf3uQTpi5R3Sg";
-        String p256dh = "BCDjB1UjsIA2xaiwnW525x9YdWEkWtML6ajbjYveuGD78Trqfkbe4ohCoEz7tC-KqWmFsXMtiInUUsPYFAtUixE";
-        String auth = "znKI4cp4Q4QT5CXra0kXiQ";
+        String endpoint = "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABfkEksWL-s0ZfUN4NkFNoq70fI9Tavi9zd064X2VD8H348MCltNRArkTMGTG2XNLst9FqJloWE0BWz-LQcb81MNUO0r1CIyI3O2LUSXFpIOVu494oerlh2aKVQ4SGtkva2LZjkIPHhy2AuDcUJPUQxULvYGRJ8eSiVcfwjJ--mn-QCLSc";
+        String p256dh = "BHFgeRVxre_3oLkPNEWcbHJL-dnOf4mLo76sglkkolco8zpiBRdn14qZaw-TDB4Ic2kIagoBOGFoYK9ezc9rTu4";
+        String auth = "MZix4Iw14P5gQK1sBNvhAQ";
         Subscription subscription = new Subscription(endpoint, new Subscription.Keys(p256dh, auth));
         String payload = "{\"title\":\"title1\",\"body\":\"body1\",\"icon\":\"/html/app-manifest/logo_512.png\",\"data\":{\"url\":\"https://www.baidu.com\"}}";
         Notification notification = new Notification(subscription, payload);
